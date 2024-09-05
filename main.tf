@@ -19,7 +19,7 @@ provider "aws" {
 
 module "hashicat" {
     source  = "app.terraform.io/r2-org/hashicat/r2"
-    version = "0.0.2"
+    version = "0.0.3"
     # insert required variables here
     prefix = "APP1"
     region = var.region
