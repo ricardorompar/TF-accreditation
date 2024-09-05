@@ -17,8 +17,8 @@ provider "aws" {
   region  = var.region
 }
 
-module "name" {
-    source = "/module_example"
+module "hashicat" {
+    source = "/hashicat"
     prefix = "APP1"
     region = var.region
     address_space = "10.0.0.0/16"
