@@ -19,13 +19,13 @@ provider "aws" {
 
 module "hashicat" {
     source  = "app.terraform.io/r2-org/hashicat/r2"
-    version = "0.0.6"
+    version = "0.0.7"
     # insert required variables here
     prefix = "APP1"
     region = var.region
     address_space = "10.0.0.0/16"
     subnet_prefix = "10.0.10.0/24"
-    instance_type = "t2.micro"
+    instance_type = "var.instance_type"
     admin_username = "hashicorp"
     height = "400"
     width = "600"
