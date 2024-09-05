@@ -1,8 +1,8 @@
 # Outputs file
 output "hashicat_url" {
-  value = "http://${aws_eip.hashicat.public_dns}"
+  value = hashicat.catapp_url
 }
 
 output "hashicat_ip" {
-  value = "http://${aws_eip.hashicat.public_ip}"
+  value = hashicat.catapp_ip
 }
