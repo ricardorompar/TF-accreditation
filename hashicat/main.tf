@@ -95,9 +95,10 @@ data "aws_ami" "ubuntu" {
   owners = ["099720109477"] # Canonical
 }
 
+#Elastic IP for the instance
 resource "aws_eip" "hashicat" {
   instance = aws_instance.hashicat.id
-  vpc      = true
+  domain   = "vpc"
 }
 
 resource "aws_eip_association" "hashicat" {
