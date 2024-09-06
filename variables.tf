@@ -7,5 +7,5 @@ variable "instance_type" {
     default     = "t2.medium"
 }
 variable "prefix" {
-    default="APP1"
+    default="APP maravillosa"
 }
