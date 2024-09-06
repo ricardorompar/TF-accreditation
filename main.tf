@@ -27,7 +27,7 @@ module "hashicat" {
     subnet_prefix = "10.0.10.0/24"
     instance_type = var.instance_type
     admin_username = "hashicorp"
-    height = "700"
+    height = "500"
     width = "700"
     placeholder = "placebear.com"
 }
