@@ -38,6 +38,7 @@ build
 actions-runner/
 setup/
 
-#Dont include hashicat:
+#Dont include the other terraform-related stuff:
 hashicat
 hashicat-no-code
+terraform-sentinel-policies
