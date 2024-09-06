@@ -28,6 +28,6 @@ module "hashicat" {
     instance_type = var.instance_type
     admin_username = "hashicorp"
     height = "600"
-    width = "700"
+    width = "600"
     placeholder = "loremflickr.com"
 }
