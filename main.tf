@@ -54,7 +54,7 @@ resource "aws_instance" "hashicat" {
   ami                         = data.aws_ami.ubuntu.id
   instance_type               = var.instance_type
 
-  for_each = toset([for i in range(4) : i.tostring()]) #number of additional instances
+  for_each = toset([for i in range(4): tostring(i)]) #number of additional instances
 
   tags = {
     Name = "${var.prefix}-hashicat-instance-${each.key}"
