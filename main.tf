@@ -31,3 +31,32 @@ module "hashicat" {
     width = "600"
     placeholder = "loremflickr.com"
 }
+
+#=========== create other instances for demo:
+#data for jammy image:
+data "aws_ami" "ubuntu" {
+  most_recent = true
+
+  filter {
+    name = "name"
+    values = ["ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-*"]
+  }
+
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
+
+  owners = ["099720109477"] # Canonical
+}
+#EC2 itself
+resource "aws_instance" "hashicat" {
+  ami                         = data.aws_ami.ubuntu.id
+  instance_type               = var.instance_type
+
+  for_each = toset([for i in range(4) : i]) #number of additional instances
+
+  tags = {
+    Name = "${var.prefix}-hashicat-instance-${each.key + 1}"
+  }
+}
