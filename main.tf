@@ -8,7 +8,7 @@ terraform {
   cloud {
     organization = "r2-org"
     workspaces {
-        name = "app1-prod-eu-east-1"
+        name = "app1-${terraform.workspace}-us-east-1"
     }
   }
 }
