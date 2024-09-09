@@ -4,7 +4,7 @@ variable "region" {
 }
 variable "instance_type" {
     description = "Specifies the AWS instance type."
-    default     = "t2.xlarge"
+    default     = "t2.medium"
 }
 variable "prefix" {
     default="Hashicat"
